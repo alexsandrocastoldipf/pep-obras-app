@@ -8,19 +8,71 @@
 
   <meta name="theme-color" content="#0f172a">
   <meta name="application-name" content="PEP/Obras">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="PEP/Obras">
 
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="icon" href="icon-512.png">
-  <link rel="apple-touch-icon" href="icon-512.png">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/png" href="./icon-512.png">
+  <link rel="apple-touch-icon" href="./icon-512.png">
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0f172a;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: white;
+    }
+
+    .app {
+      padding: 30px;
+    }
+
+    .icon {
+      width: 160px;
+      height: 160px;
+      border-radius: 32px;
+      margin-bottom: 20px;
+    }
+
+    .open {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 24px;
+      border-radius: 10px;
+      background: white;
+      color: #0f172a;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body>
+
+  <div class="app">
+    <img class="icon" src="./icon-512.png" alt="PEP/Obras">
+
+    <h1>PEP/Obras</h1>
+
+    <p>Controle de obras</p>
+
+    <a class="open"
+       href="https://script.google.com/macros/s/AKfycbxe4fIB2XBz2yy8eZSIfNSIFEK9-tp9W6y11yCGKOx2NVzQcnNfl98SimT3Z1wvJFGn/exec">
+       Abrir PEP/Obras
+    </a>
+  </div>
+
   <script>
-    window.location.replace(
-      "https://script.google.com/macros/s/AKfycbxe4fIB2XBz2yy8eZSIfNSIFEK9-tp9W6y11yCGKOx2NVzQcnNfl98SimT3Z1wvJFGn/exec"
-    );
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./service-worker.js');
+    }
   </script>
 
-  <p>Abrindo PEP/Obras...</p>
 </body>
 </html>
